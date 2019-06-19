@@ -5,8 +5,8 @@ import { OfflineClient } from '@aerogear/voyager-client';
 
 // For our client application, we will connect to the local service.
 let config = {
-  httpUrl: "http://localhost:4000/graphql",
-  wsUrl: "ws://localhost:4000/graphql",
+  httpUrl: "http://data-sync-app-mutations-docs-test.comm2.skunkhenry.com/graphql",
+  wsUrl: "ws://data-sync-app-mutations-docs-test.comm2.skunkhenry.com/graphql",
 }
 
 async function queryPeople() {
@@ -20,17 +20,17 @@ async function queryPeople() {
       fetchPolicy: 'network-only',
       query: gql`
       {
-        listEmployees
-        {
-      		employee_id,
-          employee_name,
+        addressBook {
+          name
+          address
+
         }
       }
       `
     })
     //Print the response of the query
     .then( ({data}) => {
-      console.log(data.listEmployees)
+      console.log(data.addressBook)
     });
 }
 
