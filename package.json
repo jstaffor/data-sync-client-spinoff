@@ -17,6 +17,6 @@
   "dependencies": {
     "@aerogear/voyager-client": "^2.5.0",
     "graphql-tag": "^2.10.1",
-    "lodash": "^4.17.11"
+    "lodash": "^4.17.21"
   }
 }
